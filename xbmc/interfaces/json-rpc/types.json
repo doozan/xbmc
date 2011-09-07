@@ -778,4 +778,24 @@
       }
     }
   }
+  "List.Items.Scrapers": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "required": true },
+        "label": { "type": "string", "required": true }
+      }
+    }
+  },
+  "List.Items.ScrapedItems": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "required": true },
+        "label": { "type": "string", "required": true }
+      }
+    }
+  },
 }

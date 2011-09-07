@@ -1491,6 +1491,56 @@
     "params": [],
     "returns": "string"
   },
+  "Scraper.GetScrapers": {
+    "type": "method",
+    "description": "Retrieve a list of available scraperzz",
+    "transport": "Response",
+    "permission": "ReadData",
+    "params": [
+      { "name": "type", "type": "string", "required": true, "enum": [ "artists", "albums", "movies", "tvshows", "musicvideos", "library"] }
+    ],
+    "returns": {
+      "type": "object",
+      "properties": {
+        "scrapers": { "type": "array", "required": true,
+          "items": { "$ref": "List.Items.Scrapers" }
+        }
+      }
+    }
+  },
+  "Scraper.FindMovie": {
+    "type": "method",
+    "description": "Retrieve matching items",
+    "transport": "Response",
+    "permission": "ReadData",
+    "params": [
+      { "name": "scraperid", "type": "string", "required": true },
+      { "name": "file", "type": "string", "required": true }
+    ],
+    "returns": { "type": "object",
+      "properties": {
+        "results": { "type": "array",
+          "items": { "$ref": "List.Items.ScrapedItems" }
+        }
+      }
+    }
+  },
+  "Scraper.GetMovieDetails": {
+    "type": "method",
+    "description": "Retrieve item details",
+    "transport": "Response",
+    "permission": "ReadData",
+    "params": [
+      { "name": "scraperid", "type": "string", "required": true },
+      { "name": "url", "type": "string", "required": true },
+      { "name": "fields", "$ref": "Video.Fields.Movie" }
+    ],
+    "returns": { "type": "object",
+      "properties": {
+        "moviedetails": { "$ref": "Video.Details.Movie" }
+      }
+    }
+  },
   "XBMC.GetVolume": {
     "type": "method",
     "description": "Retrieve the current volume",

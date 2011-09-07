@@ -37,6 +37,7 @@
 #include "SystemOperations.h"
 #include "InputOperations.h"
 #include "XBMCOperations.h"
+#include "ScraperOperations.h"
 
 using namespace std;
 using namespace JSONRPC;
@@ -243,6 +244,11 @@ JsonRpcMethodMap CJSONServiceDescription::m_methodMaps[] = {
   { "Input.Select",                                 CInputOperations::Select },
   { "Input.Back",                                   CInputOperations::Back },
   { "Input.Home",                                   CInputOperations::Home },
+
+// Scraper operations
+  { "Scraper.GetScrapers",                          CScraperOperations::GetScrapers },
+  { "Scraper.FindMovie",                            CScraperOperations::FindMovie },
+  { "Scraper.GetMovieDetails",                      CScraperOperations::GetMovieDetails },
 
 // XBMC operations
   { "XBMC.GetVolume",                               CXBMCOperations::GetVolume },
